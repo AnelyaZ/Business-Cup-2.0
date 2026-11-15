@@ -1,0 +1,66 @@
+# Nourishly — Minimal Family Meal Planner
+
+An English-language frontend MVP for family meal planning. The brand name is a temporary placeholder.
+
+## Requirements
+- Node.js LTS (20.19+ or 22+)
+- VS Code
+- Git and GitHub account
+
+## Run locally
+1. Open **this folder** in VS Code (the folder that contains `package.json`).
+2. Open Terminal → New Terminal.
+3. `npm install`
+4. `npm run dev`
+5. Open the address displayed by Vite (usually `http://localhost:5173`).
+6. Check production compilation: `npm run build` (creates `dist/`).
+
+## Upload to GitHub
+1. Sign in to GitHub in a browser.
+2. In VS Code choose Source Control → Initialize Repository.
+3. Stage all files (`+`), type `Initial frontend`, click Commit.
+4. Choose Publish Branch / Publish to GitHub, authorize VS Code, select Public or Private.
+5. Check your GitHub repo contains `package.json` and `src/`.
+
+If the Git author identity is requested, run:
+```
+git config --global user.name "Your Name"
+git config --global user.email "your-github-email@example.com"
+```
+
+## Deploy to Netlify
+1. Sign in at https://app.netlify.com
+2. Add new project → Import an existing project → GitHub.
+3. Authorize Netlify and select the repository.
+4. Base directory: leave empty if `package.json` is at the repository root.
+5. Build command: `npm run build`.
+6. Publish directory: `dist`.
+7. Deploy. After successful build, Netlify supplies a public URL.
+8. To update, edit files in VS Code, Commit, then Sync Changes/Push. Netlify rebuilds automatically.
+
+`netlify.toml` includes the build settings and a fallback route. Do not upload `node_modules/`, `.env` files, or `dist/` to GitHub.
+
+## Pages
+- Profile — household and monthly USD budget; editable members
+- Weekly menu — seven days × five meals; per-person calories/macros and household estimated expenses
+- Recipes — meal categories, recipe details, hand-entered custom recipes
+- Meal prep — suggested quantities and general prep/storage tips
+- Grocery list — ingredient aggregation, pantry quantities, approximate cost, manually entered receipt totals and download
+
+## Honest MVP limitations
+- Frontend only. No user accounts, backend, live store pricing, or real AI. Video-to-recipe, screenshot extraction, text-to-recipe and receipt OCR are demo placeholders.
+- Menu data and food prices are illustrative, not verified nutritional/medical advice or live prices.
+- Allergy warnings rely on simple text matching and cannot ensure food safety.
+- Local browser storage is used, so data is per browser/device and is lost when its site data is cleared.
+- Receipt expenses are a separate log, not automatically reconciled with individual ingredient purchases.
+- Photos are hosted on Unsplash and require internet connectivity.
+
+## Rename the brand later
+Search for `Nourishly` and `nourishly` in VS Code (Ctrl+Shift+F). Change visible text, page title and description, then run `npm run build`.
+
+## Change meals (updated)
+1. Open **Weekly menu**. Click an existing meal card or the + in an empty cell.
+2. Choose a recipe from the matching meal category in the dialog; the choice replaces that cell immediately.
+3. Alternatively open **Recipes**, select a recipe, click **Add to weekly plan**, select the day, and click the matching meal slot.
+4. Calories, macros, planned meal cost and grocery ingredients recalculate and are saved in local browser storage.
+5. For a site that is already deployed, replace `src/main.jsx` and `src/style.css` from this archive in your existing project, then Commit and Push.
